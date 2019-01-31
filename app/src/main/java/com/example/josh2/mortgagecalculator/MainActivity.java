@@ -3,6 +3,7 @@ package com.example.josh2.mortgagecalculator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,11 +18,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent applyIntent = getIntent();
+        final int applyVal = applyIntent.getIntExtra("applyIntent", 0);
+        //setTextSettings(applyVal);
+
         calcButton = findViewById(R.id.calcButton);
         calcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Log.i("final Setting number: ", Integer.toString(applyVal));
                 Intent summaryIntent = new Intent(getApplicationContext(), SummaryActivity.class);
+                summaryIntent.putExtra("applyVal", applyVal);
                 startActivity(summaryIntent);
             }
         });
@@ -44,4 +51,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    /*private void setTextSettings(int settingVal) {
+        if(settingVal == 0000) {
+
+        }
+    }*/
 }
