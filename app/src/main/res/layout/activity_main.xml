@@ -14,18 +14,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="20dp">
 
             <Button
                 android:id="@+id/settingsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_weight="0.5"
                 android:text="Settings" />
 
             <Button
                 android:id="@+id/detailsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_weight="0.5"
                 android:text="More Details" />
 
         </LinearLayout>
@@ -55,8 +58,9 @@
                 android:id="@+id/amortET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:ems="10"
-                android:hint="Enter amortization period"
+                android:hint="Enter amortization period (in years)"
                 android:inputType="textPersonName" />
 
             <Button

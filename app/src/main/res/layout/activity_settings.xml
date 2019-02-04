@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="15dp">
+        android:paddingBottom="20dp">
 
         <Button
             android:id="@+id/dollarButton"
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="15dp">
+        android:paddingBottom="20dp">
 
         <Button
             android:id="@+id/biweeklyButton"
