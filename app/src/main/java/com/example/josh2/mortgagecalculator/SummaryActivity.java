@@ -33,29 +33,29 @@ public class SummaryActivity extends AppCompatActivity {
 
         if((settings == 0) || (settings == 3) || (settings == 6)) {
             // bi-weekly
-            messageTextView.setText("To pay your mortgage, you should make bi-weekly payments of: ");
+            messageTextView.setText("To pay your mortgage, you should make bi-weekly payments of:");
             messageTextView.setVisibility(View.VISIBLE);
         } else if((settings == 1) || (settings == 4) || (settings == 7)) {
             // weekly
-            messageTextView.setText("To pay your mortgage, you should make weekly payments of: ");
+            messageTextView.setText("To pay your mortgage, you should make weekly payments of:");
             messageTextView.setVisibility(View.VISIBLE);
         } else if((settings == 2) || (settings == 5) || (settings == 8)) {
             // monthly
-            messageTextView.setText("To pay your mortgage, you should make monthly payments of: ");
+            messageTextView.setText("To pay your mortgage, you should make monthly payments of:");
             messageTextView.setVisibility(View.VISIBLE);
         }
 
         if((settings == 0) || (settings == 1) || (settings == 2)) {
             // dollar
-            amountTextView.setText("$ " + String.format("%.2f", mortgage));
+            amountTextView.setText("$" + String.format("%.2f", mortgage));
             amountTextView.setVisibility(View.VISIBLE);
         } else if((settings == 3) || (settings == 4) || (settings == 5)) {
             // euro
-            amountTextView.setText("€ " + String.format("%.2f", mortgage));
+            amountTextView.setText("€" + String.format("%.2f", mortgage));
             amountTextView.setVisibility(View.VISIBLE);
         } else if((settings == 6) || (settings == 7) || (settings == 8)) {
             // pound
-            amountTextView.setText("£ " + String.format("%.2f", mortgage));
+            amountTextView.setText("£" + String.format("%.2f", mortgage));
             amountTextView.setVisibility(View.VISIBLE);
         }
     }
