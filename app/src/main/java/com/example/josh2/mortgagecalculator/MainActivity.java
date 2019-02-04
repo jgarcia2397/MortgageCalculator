@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,13 +47,16 @@ public class MainActivity extends AppCompatActivity {
                 final double prinDouble = getPrinAmt();
                 final double interestDouble = getIntRateAmt() / determinePayFreq(applyVal);
                 final double numPayments = getPaymentsAmt() * determinePayFreq(applyVal);
-                //Log.i("PrinAmt., int, numPay: ", String.valueOf(prinDouble) + ", " + String.valueOf(interestDouble) + ", " + String.valueOf(numPayments));
-                double mortgage = calcMortgage(prinDouble, interestDouble, numPayments);
-                Intent summaryIntent = new Intent(getApplicationContext(), SummaryActivity.class);
-                summaryIntent.putExtra("applyVal", applyVal);
-                summaryIntent.putExtra("mortgageIntent", mortgage);
-                startActivity(summaryIntent);
-                clearEditTexts();
+                if((prinDouble == 0.0) || (interestDouble == 0.0) || (numPayments == 0.0) || (prinDouble < 0.0) || (interestDouble < 0.0) || (numPayments < 0.0)) {
+                    Toast.makeText(MainActivity.this, "Please enter valid values.", Toast.LENGTH_LONG).show();
+                } else {
+                    double mortgage = calcMortgage(prinDouble, interestDouble, numPayments);
+                    Intent summaryIntent = new Intent(getApplicationContext(), SummaryActivity.class);
+                    summaryIntent.putExtra("applyVal", applyVal);
+                    summaryIntent.putExtra("mortgageIntent", mortgage);
+                    startActivity(summaryIntent);
+                    clearEditTexts();
+                }
             }
         });
 
