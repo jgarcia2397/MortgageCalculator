@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,15 +16,13 @@ public class MainActivity extends AppCompatActivity {
     Button settingsButton;
     Button detailsButton;
 
-    TextView mortPrinET;
-    TextView interestET;
-    TextView amortET;
+    EditText mortPrinET;
+    EditText interestET;
+    EditText amortET;
+
+    TextView defaultSettingTV;
 
     int num;
-
-    /* double prinDouble;
-    double interestDouble;
-    double numPayments; */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         interestET = findViewById(R.id.interestET);
         amortET = findViewById(R.id.amortET);
 
-
+        defaultSettingTV = findViewById(R.id.defaultSettingTV);
+        setTextSettings(applyVal);
 
         calcButton = findViewById(R.id.calcButton);
         calcButton.setOnClickListener(new View.OnClickListener() {
@@ -137,5 +137,27 @@ public class MainActivity extends AppCompatActivity {
         double mortgageAmt;
         mortgageAmt = principalAmt * (((intRate * (Math.pow((1 + intRate), amortPeriod)))) / (Math.pow((1 + intRate), amortPeriod) - 1));
         return mortgageAmt;
+    }
+
+    private void setTextSettings(int settingVal) {
+        if(settingVal == 0) {
+            defaultSettingTV.setText("Your mortgage will be calculated with Dollars ($) and bi-weekly payments. This can be changed in the settings.");
+        } else if(settingVal == 1) {
+            defaultSettingTV.setText("Your mortgage will be calculated with Dollars ($) and weekly payments. This can be changed in the settings.");
+        } else if(settingVal == 2) {
+            defaultSettingTV.setText("Your mortgage will be calculated with Dollars ($) and monthly payments. This can be changed in the settings.");
+        } else if(settingVal == 3) {
+            defaultSettingTV.setText("Your mortgage will be calculated with Euros (€) and bi-weekly payments. This can be changed in the settings.");
+        } else if(settingVal == 4) {
+            defaultSettingTV.setText("Your mortgage will be calculated with Euros (€) and weekly payments. This can be changed in the settings.");
+        } else if(settingVal == 5) {
+            defaultSettingTV.setText("Your mortgage will be calculated with Euros (€) and monthly payments. This can be changed in the settings.");
+        } else if(settingVal == 6) {
+            defaultSettingTV.setText("Your mortgage will be calculated with Pounds (£) and bi-weekly payments. This can be changed in the settings.");
+        } else if(settingVal == 7) {
+            defaultSettingTV.setText("Your mortgage will be calculated with Pounds (£) and weekly payments. This can be changed in the settings.");
+        } else if(settingVal == 8) {
+            defaultSettingTV.setText("Your mortgage will be calculated with Pounds (£) and monthly payments. This can be changed in the settings.");
+        }
     }
 }
