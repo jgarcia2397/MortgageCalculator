@@ -3,23 +3,57 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
     android:orientation="vertical"
     tools:context=".DetailsActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/mortgageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:includeFontPadding="false"
+        android:paddingBottom="15dp"
         android:text="The mortgage payment is calculated using the following formula:"
         android:textSize="20sp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/mortgageImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/mortgageformula" />
+        android:paddingBottom="15dp"
+        app:srcCompat="@drawable/formula_mortgage" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="M = mortgage payment"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="P = principle amount"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="r = interest rate (bi-weekly/weekly/monthly)"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="n = total number of payments"
+        android:textSize="15sp" />
 </LinearLayout>
